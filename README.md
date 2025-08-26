@@ -92,11 +92,11 @@ checklist-app/
 
 ## 2.b. Captures d'écran
 
-Des captures d'écran de l'application sont disponibles dans `src/assets/img/` :
+Des captures d'écran de l'application sont disponibles dans `checklist-app/src/assets/img/` :
 
-- ![Desktop](src/assets/img/Desktop.png)
-- ![Mobile](src/assets/img/Mobile.png)
-- ![Tablette](src/assets/img/Tablette.png)
+- ![Desktop](checklist-app/src/assets/img/Desktop.png)
+- ![Mobile](checklist-app/src/assets/img/Mobile.png)
+- ![Tablette](checklist-app/src/assets/img/Tablette.png)
 
 ---
 
