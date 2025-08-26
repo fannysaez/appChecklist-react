@@ -1,17 +1,47 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import AddTask from '../AddTask/AddTask';
 import TaskItem from '../TaskItem/TaskItem';
 import DeleteTask from '../DeleteTask/DeleteTask';
 import './TaskList.css';
 
 function TaskList() {
-    const [tasks, setTasks] = useState([
-        { id: 1, label: 'Lire le brief du projet', done: false },
-        { id: 2, label: 'Faire un café bien mérité', done: false }
-    ]);
+    // Initialisation des tâches depuis le localStorage ou valeurs par défaut
+    const [tasks, setTasks] = useState(() => {
+        const saved = localStorage.getItem('tasks');
+        if (saved) {
+            try {
+                return JSON.parse(saved);
+            } catch {
+                return [
+                    { id: 1, label: 'Lire le brief du projet', done: false },
+                    { id: 2, label: 'Faire un café bien mérité', done: false }
+                ];
+            }
+        }
+        return [
+            { id: 1, label: 'Lire le brief du projet', done: false },
+            { id: 2, label: 'Faire un café bien mérité', done: false }
+        ];
+    });
     const [editingTaskId, setEditingTaskId] = useState(null);
     const [deletingTask, setDeletingTask] = useState(null);
-    const [nextId, setNextId] = useState(3);
+    // Calcul dynamique du prochain ID à partir des tâches existantes
+    const [nextId, setNextId] = useState(() => {
+        const saved = localStorage.getItem('tasks');
+        if (saved) {
+            try {
+                const arr = JSON.parse(saved);
+                if (Array.isArray(arr) && arr.length > 0) {
+                    return Math.max(...arr.map(t => t.id)) + 1;
+                }
+            } catch { }
+        }
+        return 3;
+    });
+    // Sauvegarde des tâches dans le localStorage à chaque modification
+    useEffect(() => {
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    }, [tasks]);
 
     const addTask = (label) => {
         const newTask = {
