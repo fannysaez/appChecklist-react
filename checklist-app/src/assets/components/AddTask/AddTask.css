@@ -1,0 +1,160 @@
+/* AddTask.css */
+.add-task-form {
+    margin-bottom: var(--spacing-lg);
+}
+
+.input-group {
+    display: flex;
+    gap: var(--spacing);
+    align-items: stretch;
+}
+
+.add-task-input {
+    flex: 1;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--surface-light);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-lg);
+    color: var(--text-primary);
+    font-size: var(--font-size-base);
+    transition: var(--transition);
+}
+
+.add-task-input::placeholder {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.add-task-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    background: var(--surface);
+}
+
+.add-task-input:hover:not(:focus) {
+    border-color: var(--border-light);
+}
+
+.add-task-input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.add-task-button {
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--gradient-primary);
+    border: none;
+    border-radius: var(--radius-lg);
+    color: white;
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    min-width: 120px;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.add-task-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.add-task-button:hover::before {
+    opacity: 1;
+}
+
+.add-task-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.add-task-button:active {
+    transform: translateY(0);
+}
+
+.add-task-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.add-task-button--loading {
+    pointer-events: none;
+}
+
+.button-icon {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.button-text {
+    font-weight: 600;
+}
+
+.button-text--white {
+    color: #fff !important;
+}
+
+/* Spinner de chargement */
+.spinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Compteur de caractères */
+
+/* Suppression du compteur de caractères */
+
+/* Responsive */
+@media (max-width: 768px) {
+    .input-group {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .add-task-button {
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .add-task-input {
+        padding: var(--spacing) var(--spacing-md);
+        font-size: var(--font-size-sm);
+    }
+
+    .add-task-button {
+        padding: var(--spacing) var(--spacing-md);
+        font-size: var(--font-size-sm);
+    }
+}

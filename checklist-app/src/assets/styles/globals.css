@@ -1,0 +1,223 @@
+@import './responsive.css';
+
+/* Centrage global de l'app */
+.main-center {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #85a6e5 0%, #cfdef3 100%);
+}
+
+.TaskList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+}
+
+.TaskItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--surface-light);
+    border-radius: var(--radius-lg);
+    padding: 12px 18px;
+    font-size: 1.08rem;
+    box-shadow: 0 1px 2px rgba(99, 102, 241, 0.04);
+    border: 1px solid var(--border);
+    transition: box-shadow 0.2s, border 0.2s;
+}
+
+.TaskItem:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+.TaskItem-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.TaskItem-text {
+    color: var(--text-primary);
+    font-size: 1.08rem;
+    transition: color 0.2s;
+}
+
+.TaskItem-text.done {
+    text-decoration: line-through;
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+.TaskItem-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.TaskItem-btn {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    padding: 7px 14px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.TaskItem-btn:hover {
+    background: var(--primary-dark);
+}
+
+.TaskItem-btn--danger {
+    background: var(--danger);
+}
+
+.TaskItem-btn--danger:hover {
+    background: #b91c1c;
+}
+
+body {
+    background: linear-gradient(135deg, #4F8A8B 0%, #F9ED69 50%, #F08A5D 100%);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.app-container {
+    /* max-width: 420px; */
+    margin: 40px auto;
+    border-radius: 16px;
+    padding: 32px 24px 24px 24px;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+}
+
+.add-task-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.add-task-form input {
+    flex: 1;
+    border: 1px solid #e2e8f0;
+    border-radius: 30px;
+    font-size: 1rem;
+    background: #f7fafd;
+    transition: border 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.add-task-form input:focus {
+    border: 1.5px solid #4F8A8B;
+    box-shadow: 0 0 0 2px #e0eafc;
+}
+
+.add-task-form button {
+    background: #3182ce;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.add-task-form button:hover {
+    background: #2563eb;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f1f5f9;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.task-item button {
+    margin-left: 8px;
+    background: #e2e8f0;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.task-item button:hover {
+    background: #cbd5e1;
+}
+
+.edit-task-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.edit-task-content {
+    background: #fff;
+    padding: 32px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    min-width: 320px;
+}
+
+.edit-task-content input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-bottom: 16px;
+}
+
+.edit-task-content button {
+    margin-right: 8px;
+    background: #3182ce;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.edit-task-content button:last-child {
+    background: #e53e3e;
+}
+
+.edit-task-content button:hover {
+    opacity: 0.9;
+}

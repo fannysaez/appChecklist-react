@@ -1,0 +1,43 @@
+:root {
+    /* Couleurs principales */
+    --primary: #6366f1;
+    --primary-dark: #4338ca;
+    --success: #22c55e;
+    --warning: #f59e42;
+    --info: #0ea5e9;
+    --danger: #ef4444;
+    --surface: #fff;
+    --surface-light: #f8fafc;
+    --bg-tertiary: #e0e7ef;
+    --border: #e5e7eb;
+    --text-primary: #22223b;
+    --text-secondary: #6366f1;
+    --text-muted: #6b7280;
+
+    /* Effets */
+    --gradient-primary: linear-gradient(90deg, #6366f1 0%, #0ea5e9 100%);
+    --shadow-xl: 0 8px 32px rgba(99, 102, 241, 0.08);
+    --shadow-lg: 0 4px 16px rgba(99, 102, 241, 0.10);
+
+    /* Radius et espacements */
+    --radius: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 18px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing: 16px;
+    --spacing-md: 20px;
+    --spacing-lg: 32px;
+    --spacing-xl: 48px;
+
+    /* Font sizes */
+    --font-size-sm: 0.95rem;
+    --font-size-base: 1.08rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+    --font-size-3xl: 2.5rem;
+
+    /* Transitions */
+    --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
