@@ -94,9 +94,22 @@ checklist-app/
 
 Des captures d'écran de l'application sont disponibles dans `checklist-app/src/assets/img/` :
 
-- ![Desktop](checklist-app/src/assets/img/Desktop.png)
-- ![Mobile](checklist-app/src/assets/img/Mobile.png)
-- ![Tablette](checklist-app/src/assets/img/Tablette.png)
+<div align="center">
+
+<table>
+   <tr>
+      <td align="center"><img src="checklist-app/src/assets/img/Desktop.png" alt="Desktop" width="250"/></td>
+      <td align="center"><img src="checklist-app/src/assets/img/Mobile.png" alt="Mobile" width="120"/></td>
+      <td align="center"><img src="checklist-app/src/assets/img/Tablette.png" alt="Tablette" width="180"/></td>
+   </tr>
+   <tr>
+      <td align="center">Desktop</td>
+      <td align="center">Mobile</td>
+      <td align="center">Tablette</td>
+   </tr>
+</table>
+
+</div>
 
 ---
 
